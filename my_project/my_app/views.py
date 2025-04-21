@@ -7,7 +7,7 @@ def add(request):
         price = request.POST.get('price')
         location = request.POST.get('location')
         Product.objects.create(name=name, price=price, location=location)
-        return redirect('add')
+        return redirect('add me')
     return render(request, 'add.html')
 
 def view(request):
