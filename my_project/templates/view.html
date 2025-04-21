@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+    <h2>Product List</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Location</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.location }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No products available.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="{% url 'add' %}">Add New Product</a>
+</body>
+</html>
